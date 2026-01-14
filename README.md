@@ -1,67 +1,60 @@
-# ✋ HandSktech — Gesture-Based Drawing Application
+# ✋🎨 HandSketch
 
-HandSktech is a real-time **gesture-controlled drawing application** built using **Computer Vision** and **MediaPipe Hands**.  
-It allows users to draw, erase, change colors, adjust brush size, undo/redo strokes, and manage saved canvases — **all without using a mouse or keyboard**.
+**HandSketch** is a real-time, gesture-based drawing application that enables users to create digital artwork using only hand gestures captured through a webcam. By eliminating the need for traditional input devices such as a mouse, keyboard, or touchscreen, HandSketch provides a fully touchless and intuitive drawing experience powered by Computer Vision.
 
-The entire interaction happens through **hand gestures detected via webcam**.
+The project uses advanced hand-tracking techniques to recognize finger movements and gestures, translating them into smooth, precise strokes on a virtual canvas. HandSketch focuses on natural human–computer interaction, making it suitable for creative applications, accessibility-focused systems, and educational demonstrations of real-time vision-based interaction.
 
+---
 
-## 🚀 Features
+## 🚀 Key Features
 
-### ✍️ Drawing & Interaction
-- Draw in the air using your **index finger**
-- Smooth stroke rendering (jitter-free drawing)
-- Toggle **Draw Mode** on/off
-- Eraser mode (true canvas erase)
+### ✍️ Gesture-Based Drawing
 
-### 🎨 Color & Brush Controls
-- Gesture-based color selection using **color circles**
-- Adjustable brush size (`+ / -`)
-- Active color and brush size indicators
+* Draw by raising the index finger
+* Automatically stops drawing when the palm is open
+* Supports drawing with **either hand**
 
-### ↩️ Undo / Redo
-- **Undo** using fist gesture ✊
-- **Redo** using index + middle finger ✌️
+### 🎨 Drawing Tools & Controls
+
+* Multiple color selection using on-screen color circles
+* Adjustable brush size via UI controls
+* Eraser tool for precise corrections
+* Smooth stroke rendering using interpolation and filtering
+
+### 🖐️ Gesture-Driven Interaction
+
+* On-screen buttons activated through hand gestures
+* No mouse or keyboard input required
+* Gesture-based undo and redo functionality
+* Dedicated draw-mode toggle to enable or disable drawing
 
 ### 💾 Canvas Management
-- Save drawings as images
-- Clear canvas instantly
-- **In-app gallery** to view and load saved canvases
-- No webcam interruption while saving/loading
 
-### 🖐️ Gesture-Only UI
-- No mouse
-- No keyboard
-- No hand restrictions (any hand can perform any action)
-- Button clicks via **hover (dwell)** interaction
+* Save drawings without closing the webcam feed
+* Automatically stores canvases in a local gallery
+* Open and view previously saved drawings inside the application
 
-### 🪟 User-Friendly Window
-- Starts in **normal window mode**
-- User can resize or fullscreen manually
+### 🖥️ User Experience
 
+* Real-time hand skeleton visualization
+* Stable and optimized finger detection
+* Resizable application window with user-controlled fullscreen option
+* Minimal UI that does not obstruct the drawing area
 
-## 🧠 Gesture Guide
+---
 
-| Action | Gesture |
-|------|--------|
-| Draw | Index finger up |
-| Stop drawing | Relax hand |
-| Click buttons | Hover index finger over UI |
-| Undo | Fist ✊ |
-| Redo | Index + Middle ✌️ |
-| Erase | Toggle Erase button |
-| Change color | Hover over color circle |
-| Brush size | Hover on + / − |
+## 🛠️ Technologies Used
 
+* **Python** – core application logic
+* **OpenCV** – webcam access, rendering, and image processing
+* **MediaPipe Hands** – real-time hand landmark detection
+* **NumPy** – canvas operations and numerical processing
 
-## 🛠️ Tech Stack
-- **Python**
-- **OpenCV** – video capture & rendering
-- **MediaPipe Hands** – real-time hand landmark detection
-- **NumPy** – canvas operations
-
+---
 
 ## 📁 Project Structure
+
+```
 HandSketch/
 ├── HandSketch.py
 ├── requirements.txt
@@ -70,72 +63,80 @@ HandSketch/
     ├── canvas_101530.png
     ├── canvas_102145.png
     └── ...
+```
 
+---
 
 ## ⚙️ Installation & Setup
 
-### 1️⃣ Clone the repository
-git clone 
-cd HandSketch
+### 1️⃣ Clone the Repository
 
-### 2️⃣ Create virtual environment (recommended)
+```bash
+git clone https://github.com/dhriti16sharma/HandSketch.git
+cd HandSketch
+```
+
+### 2️⃣ Create a Virtual Environment (Recommended)
+
+```bash
 python -m venv venv
 venv\Scripts\activate   # Windows
+```
 
+### 3️⃣ Install Dependencies
 
-### 3️⃣ Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
-### 4️⃣ Run the application
+---
+
+## ▶️ Running the Application
+
+```bash
 python HandSketch.py
+```
 
+Ensure that:
 
-## 📷 System Requirements
+* A webcam is connected and accessible
+* Adequate lighting is available for accurate hand detection
 
-* Webcam (built-in or external)
-* Python **3.10 – 3.11** (recommended)
-* Good lighting for accurate hand detection
+---
 
+## 🧠 How HandSketch Works
 
-## 🧪 Tips for Best Performance
+HandSketch utilizes MediaPipe’s real-time hand tracking model to detect 21 hand landmarks per hand from the webcam feed. The position of the index finger tip is mapped onto a virtual canvas to create drawing strokes. Gesture logic determines whether the user is drawing, interacting with UI elements, erasing, or navigating the gallery.
 
-* Keep your hand **30–60 cm** from the camera
-* Avoid strong backlight
-* Use clear, slow gestures near UI buttons
-* Keep fingers clearly visible to the camera
+To improve usability, stroke smoothing algorithms are applied to reduce jitter and create fluid, natural-looking lines. All UI interactions are processed directly within the video feed, enabling a fully immersive touchless experience.
 
+---
 
-## 🌟 Use Cases
+## 🎯 Applications & Use Cases
 
-* Touchless drawing & whiteboarding
-* Gesture-based UI experiments
-* Computer Vision learning projects
-* Interactive presentations
-* Accessibility-focused interfaces
+* Touchless drawing and creative tools
+* Human–Computer Interaction (HCI) demonstrations
+* Computer Vision learning and experimentation
+* Accessibility-friendly interfaces
+* Academic projects, hackathons, and portfolio showcases
 
+---
 
-## 📌 Future Enhancements
+## 📜 License
 
-* Pressure-based brush thickness
-* Gesture tutorial overlay
-* Multi-user canvas
-* Export drawing as video
-* AI-based gesture correction
+This project is licensed under the **MIT License**, allowing free use, modification, and distribution with proper attribution.
 
-## 👩‍💻 Author
+---
 
-**Dhriti Sharma**
-B.Tech CSE | AI & Full-Stack Enthusiast
-UI/UX Designer | Computer Vision Developer
+## 🙌 Acknowledgements
 
+* **MediaPipe** by Google for real-time hand tracking
+* **OpenCV** community for computer vision tools
 
-## ⭐ Show Your Support
+---
 
-If you like this project:
+## ⭐ Support
 
-* ⭐ Star the repository
-* 🍴 Fork it
-* 📢 Share it
+If you find this project useful, consider giving it a ⭐ on GitHub!
 
-Happy Air Drawing! ✨✋
-
+---
