@@ -62,15 +62,14 @@ The entire interaction happens through **hand gestures detected via webcam**.
 
 
 ## 📁 Project Structure
-
 HandSketch/
 ├── HandSketch.py
 ├── requirements.txt
 ├── README.md
 └── saved_canvases/
-├── canvas_101530.png
-├── canvas_102145.png
-└── ...
+    ├── canvas_101530.png
+    ├── canvas_102145.png
+    └── ...
 
 
 ## ⚙️ Installation & Setup
