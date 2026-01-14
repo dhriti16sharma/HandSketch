@@ -62,8 +62,9 @@ The entire interaction happens through **hand gestures detected via webcam**.
 
 
 ## 📁 Project Structure
-HandSktech/
-├── HandSktech.py
+
+HandSketch/
+├── HandSketch.py
 ├── requirements.txt
 ├── README.md
 └── saved_canvases/
